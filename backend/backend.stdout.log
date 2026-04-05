@@ -1,0 +1,5 @@
+[MQTT] Connecting to www.yanacreations.com:1883 ...
+[MQTT] Subscriber thread started
+[Flask] Dashboard → http://localhost:5000
+ * Serving Flask app 'app'
+ * Debug mode: off

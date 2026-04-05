@@ -1,0 +1,42 @@
+:root {
+  --navy-deep: #0d1b2e;
+  --navy-mid: #1a2d45;
+  --navy-light: #203550;
+  --rose: #e8a0b4;
+  --slate: #8fa3b8;
+  --sky: #7ecef4;
+  --violet: #a5b4fc;
+  --amber: #f5d478;
+  --peach: #f4a46a;
+  --mint: #69e0a0;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--navy-deep);
+  color: #f0eae8;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--navy-mid);
+  border-radius: 4px;
+}

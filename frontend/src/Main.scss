@@ -1,0 +1,121 @@
+// ── CSS variables ─────────────────────────────────────────────────────────────
+:root {
+  --navy-deep : #0d1b2e;
+  --navy-mid  : #1a2d45;
+  --navy-light: #203550;
+  --rose      : #e8a0b4;
+  --slate     : #8fa3b8;
+  --sky       : #7ecef4;
+  --violet    : #a5b4fc;
+  --amber     : #f5d478;
+  --peach     : #f4a46a;
+  --mint      : #69e0a0;
+  --text-base : #f0eae8;
+}
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+html, body, #app {
+  background : var(--navy-deep) !important;
+  color      : var(--text-base);
+  min-height : 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+// ── Custom scrollbar ──────────────────────────────────────────────────────────
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--navy-deep); }
+::-webkit-scrollbar-thumb { background: var(--navy-mid);  border-radius: 3px; }
+
+// ── Page fade-in transition ───────────────────────────────────────────────────
+.page-enter-active, .page-leave-active { transition: opacity .22s ease, transform .22s ease; }
+.page-enter-from { opacity: 0; transform: translateY(10px); }
+.page-leave-to   { opacity: 0; transform: translateY(-6px); }
+
+// ── Sensor cards ──────────────────────────────────────────────────────────────
+.sensor-card {
+  background   : var(--navy-mid) !important;
+  border       : 1px solid rgba(255,255,255,.07) !important;
+  transition   : transform .2s, box-shadow .2s;
+  overflow     : hidden;
+
+  &:hover {
+    transform  : translateY(-4px);
+    box-shadow : 0 12px 32px rgba(0,0,0,.4) !important;
+  }
+
+  .accent-bar {
+    height       : 3px;
+  }
+}
+
+// ── Section divider ───────────────────────────────────────────────────────────
+.section-label {
+  display     : flex;
+  align-items : center;
+  gap         : 12px;
+  color       : var(--rose);
+  font-size   : .72rem;
+  font-weight : 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  &::before, &::after {
+    content    : '';
+    flex       : 1;
+    height     : 1px;
+    background : rgba(232,160,180,.25);
+  }
+}
+
+// ── Mono font util ────────────────────────────────────────────────────────────
+.mono { font-family: 'Space Mono', monospace !important; }
+
+// ── Vuetify overrides ─────────────────────────────────────────────────────────
+.v-application { background: var(--navy-deep) !important; }
+.v-navigation-drawer { background: var(--navy-mid) !important; }
+.v-app-bar { background: var(--navy-mid) !important; }
+
+.v-data-table {
+  background: var(--navy-mid) !important;
+  border-radius: 16px !important;
+
+  thead th {
+    background  : var(--navy-light) !important;
+    color       : var(--rose) !important;
+    font-size   : .68rem !important;
+    font-weight : 700 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  tbody {
+    tr td { background: var(--navy-mid) !important; font-size: .8rem !important; }
+    tr:nth-child(even) td { background: #132338 !important; }
+    tr:hover td { background: var(--navy-light) !important; }
+  }
+}
+
+.v-field__outline { border-color: rgba(255,255,255,.12) !important; }
+.v-label          { color: var(--slate) !important; }
+
+// ── Live pulse dot ────────────────────────────────────────────────────────────
+.live-dot {
+  display      : inline-block;
+  width        : 8px;
+  height       : 8px;
+  border-radius: 50%;
+  animation    : livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%      { opacity: .3;  transform: scale(.7);  }
+}
+
+// ── Highcharts container ──────────────────────────────────────────────────────
+.hc-container {
+  background   : var(--navy-mid);
+  border-radius: 16px;
+  border       : 1px solid rgba(255,255,255,.07);
+  padding      : 16px;
+}
